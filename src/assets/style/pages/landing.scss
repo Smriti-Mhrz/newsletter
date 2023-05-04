@@ -1,0 +1,40 @@
+@media (max-width:450px){
+    .landing__wrapper{
+        border: 1px solid black;
+        padding: 16px;
+        .wrapper-card{
+            border: 1px solid red;
+            padding: 16px;
+            margin: 0 0 24px;
+            position: relative;
+            .card-title{
+                // border: 1px solid blue;
+            }
+            h1{
+                font-size: 32px;
+                line-height: 38px;
+                font-weight: 700;
+            }
+            .card-photo{
+                margin: 10px 0;
+                img{
+                    width: 380px;
+                }
+            }
+            .desc{
+                font-size: 18px;
+                font-weight: 600;
+                border: 1px solid blue;
+            }
+            // .date{
+            //     font-weight: 300;
+            //     font-size: 12px;
+            //     text-align: right;
+            // }
+        }
+        button{
+            position: absolute;
+            
+        }
+    }
+}
