@@ -56,30 +56,102 @@
         .link-login {
           padding: 16px;
           line-height: 2;
+          display: flex;
+          flex-direction: column;
           button {
             border: none;
             outline: none;
             background-color: transparent;
             color: white;
             cursor: pointer;
-          }
-          h4 {
-            font-weight: 600;
-            color: #82b440;
+            &:nth-child(2) {
+              h4 {
+                font-weight: 600;
+                color: #82b440;
+              }
+            }
           }
         }
       }
     }
   }
 }
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 577px) and (max-width: 768px) {
   .navbar {
+    width: 100%;
+    background-color: #000000;
+    padding: 16px;
     .navbar__items {
-      .items-hamicon {
-        display: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .items-logo {
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        img {
+          width: 100%;
+          height: 50px;
+        }
       }
       .items-links {
         position: static;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        .link-search {
+          display: none;
+        }
+        .link-categories {
+          ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            overflow: hidden;
+            li {
+              list-style: none;
+              cursor: pointer;
+              color: white;
+              transition: 250ms ease;
+              &:hover {
+                color: #82b440;
+              }
+            }
+          }
+        }
+        .link-login {
+          button {
+            background: transparent;
+            color: #82b440;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            span {
+              svg {
+                font-size: 30px;
+              }
+            }
+            &:nth-child(1) {
+              display: none;
+            }
+            &:nth-child(2) {
+              padding: 5px 16px;
+              border: 1px solid #82b440;
+              transition: 250ms ease;
+              h4 {
+                color: #82b440;
+              }
+              &:hover {
+                background-color: #82b440;
+                h4 {
+                  color: white;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

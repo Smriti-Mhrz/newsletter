@@ -2,16 +2,9 @@ import React, { useEffect, useState } from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { AccountCircleIcon, CloseIcon } from "../assets/icons/icons";
 import logo from "../assets/images/newspaper.png";
-const categories = [
-  "Business",
-  "Entertainment",
-  "Health",
-  "Science",
-  "Sports",
-  "Techonology",
-];
+const categories = ["Business", "Entertainment", "Health", "Science", "Sports"];
 export const Navbar = () => {
-  const [iconState, setIconState] = useState(true);
+  const [iconState, setIconState] = useState(false);
   const [iconToggle, setIconToggle] = useState(<MenuIcon fontSize="large" />);
   const toggleIcon = () => {
     if (iconState) {
@@ -24,8 +17,10 @@ export const Navbar = () => {
   };
   useEffect(() => {
     const handleCategory = () => {
-      if (window.innerWidth >= 576) {
+      if (window.innerWidth > 576) {
         setIconState(false);
+      } else {
+        setIconState(true);
       }
     };
     window.addEventListener("resize", handleCategory);
@@ -58,7 +53,9 @@ export const Navbar = () => {
                   <AccountCircleIcon fontSize="large" />
                 </span>
               </button>
-              <h4>Login</h4>
+              <button>
+                <h4>Login</h4>
+              </button>
             </div>
           </div>
         ) : (
