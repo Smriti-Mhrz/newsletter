@@ -4,7 +4,7 @@ import { AccountCircleIcon, CloseIcon } from "../assets/icons/icons";
 import logo from "../assets/images/newspaper.png";
 const categories = ["Business", "Entertainment", "Health", "Science", "Sports"];
 export const Navbar = () => {
-  const [iconState, setIconState] = useState(false);
+  const [iconState, setIconState] = useState(true);
   const [iconToggle, setIconToggle] = useState(<MenuIcon fontSize="large" />);
   const toggleIcon = () => {
     if (iconState) {
@@ -17,7 +17,7 @@ export const Navbar = () => {
   };
   useEffect(() => {
     const handleCategory = () => {
-      if (window.innerWidth > 576) {
+      if (window.innerWidth > 769) {
         setIconState(false);
       } else {
         setIconState(true);
