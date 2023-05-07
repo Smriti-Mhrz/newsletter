@@ -1,3 +1,4 @@
+
 import "./App.scss";
 import { Navbar, Footer } from "./components";
 import { Landing, Business, PagenotFound } from "./pages";
@@ -15,6 +16,7 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
+
   );
 }
 
