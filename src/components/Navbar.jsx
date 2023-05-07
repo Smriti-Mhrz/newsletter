@@ -1,10 +1,31 @@
 import React, { useEffect, useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import { AccountCircleIcon, CloseIcon } from "../assets/icons/icons";
+import { AccountCircleIcon, CloseIcon, MenuIcon } from "../assets/icons/icons";
 import logo from "../assets/images/newspaper.png";
-const categories = ["Business", "Entertainment", "Health", "Science", "Sports"];
+import { NavLink } from "react-router-dom";
+const navLink = [
+  {
+    navpage: "Business",
+    navlink: "/business",
+  },
+  {
+    navpage: "Entertainment",
+    navlink: "/entertainment",
+  },
+  {
+    navpage: "Health",
+    navlink: "/health",
+  },
+  {
+    navpage: "Science",
+    navlink: "/science",
+  },
+  {
+    navpage: "Sports",
+    navlink: "/sports",
+  },
+];
 export const Navbar = () => {
-  const [iconState, setIconState] = useState(true);
+  const [iconState, setIconState] = useState(false);
   const [iconToggle, setIconToggle] = useState(<MenuIcon fontSize="large" />);
   const toggleIcon = () => {
     if (iconState) {
@@ -30,7 +51,9 @@ export const Navbar = () => {
     <div className="navbar">
       <div className="navbar__items">
         <div className="items-logo">
-          <img src={logo} alt="logo" />
+          <NavLink to="/">
+            <img src={logo} alt="logo" />
+          </NavLink>
         </div>
         <div className="items-hamicon">
           <i onClick={toggleIcon}>{iconToggle}</i>
@@ -42,8 +65,12 @@ export const Navbar = () => {
             </div>
             <div className="link-categories">
               <ul>
-                {categories.map((item) => {
-                  return <li key={item}>{item}</li>;
+                {navLink.map((item) => {
+                  return (
+                    <li key={item.navpage}>
+                      <NavLink to={item.navlink}>{item.navpage}</NavLink>
+                    </li>
+                  );
                 })}
               </ul>
             </div>

@@ -1,15 +1,21 @@
-
 import "./App.scss";
-import { Navbar } from "./components";
-import { Landing } from './pages';
+import { Navbar, Footer } from "./components";
+import { Landing, Business, PagenotFound } from "./pages";
+import { BrowserRouter, Router, Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <div className="App">
-       <Landing/>  
-      <Navbar />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="*" element={<PagenotFound />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
-
 }
 
 export default App;
